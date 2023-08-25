@@ -70,3 +70,7 @@ select p.product_name, s.year, s.price from sales as s
 join product as p on p.product_id = s.product_id
 
 --------------------------------------------------------------------------------------
+
+select u.unique_id, e.name from employees as e
+left join employeeUNI as u on e.id = u.id 
+----------------------------------------------------------------------------------------
