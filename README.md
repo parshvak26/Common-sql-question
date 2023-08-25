@@ -74,3 +74,10 @@ join product as p on p.product_id = s.product_id
 select u.unique_id, e.name from employees as e
 left join employeeUNI as u on e.id = u.id 
 ----------------------------------------------------------------------------------------
+
+# Write your MySQL query statement below
+select e.name, b.bonus from employee e
+left join bonus b on e.empid = b.empid
+where b.bonus <1000 or b.bonus is null;
+
+----------------------------------------------------------------------------------------
