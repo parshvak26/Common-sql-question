@@ -56,3 +56,12 @@ select w1.id from weather as w1, weather as w2
 where datediff(w1.recorddate, w2.recorddate) = 1 and w1.temperature > w2.temperature
 
 -----------------------------------------------------------------------------------
+
+SELECT v.customer_id, COUNT(v.visit_id) AS count_no_trans 
+from Visits v 
+LEFT JOIN Transactions t 
+ON v.visit_id = t.visit_id  
+WHERE t.transaction_id IS NULL 
+GROUP BY v.customer_id; 
+
+-----------------------------------------------------------------------------------
