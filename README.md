@@ -100,3 +100,9 @@ left join confirmations c on s.user_id = c.user_id
 group by s.user_id
 
 ----------------------------------------------------------------------------------------------
+
+select * from cinema 
+where id %2 != 0 and description != 'boring'
+order by rating desc
+
+----------------------------------------------------------------------------------------------------
