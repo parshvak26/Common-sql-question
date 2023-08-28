@@ -81,3 +81,12 @@ left join bonus b on e.empid = b.empid
 where b.bonus <1000 or b.bonus is null;
 
 ----------------------------------------------------------------------------------------
+
+select s.student_id, s.student_name, su.subject_name, count(e.subject_name) as attended_exams from students as s 
+cross join subjects as su
+left join examinations as e on e.student_id = s.student_id and  su.subject_name = e.subject_name
+group by s.student_id, e.subject_name, su.subject_name
+order by s.student_id, su.subject_name
+
+----------------------------------------------------------------------------------------------
+
