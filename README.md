@@ -66,6 +66,10 @@ GROUP BY v.customer_id;
 
 -----------------------------------------------------------------------------------
 
+select c.name from (select a.name, count(a.id) countname from employee as a left join employee as b on a.id = b.managerid group by a.name) as c where c.countname >=5
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
 select p.product_name, s.year, s.price from sales as s
 join product as p on p.product_id = s.product_id
 
