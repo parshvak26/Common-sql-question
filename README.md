@@ -94,3 +94,9 @@ order by s.student_id, su.subject_name
 
 ----------------------------------------------------------------------------------------------
 
+select s.user_id, round(avg(case when c.action ='confirmed' then 1.00 else 0.00 end), 2) as confirmation_rate
+from signups as s
+left join confirmations c on s.user_id = c.user_id 
+group by s.user_id
+
+----------------------------------------------------------------------------------------------
