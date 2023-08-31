@@ -182,4 +182,10 @@ where (product_id, year) in
 select class from (select class, count(class) as cnt from courses 
 group by class having cnt >4) as C
 
+Another method
+
+with cte as (select class, count(class) as cnt from courses 
+group by class having cnt >4)
+
+select class from cte
 --------------------------------------------------------------------------------------------------------------------
