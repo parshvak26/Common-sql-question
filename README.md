@@ -172,3 +172,9 @@ group by activity_date
 having activity_date>="2019-06-28" and activity_date<="2019-07-27"
 
 ------------------------------------------------------------------------------------------------------------------
+
+select product_id, year as first_year, quantity, price from sales
+where (product_id, year) in 
+(select product_id, min(year) from sales group by product_id)
+
+------------------------------------------------------------------------------------------------------------------
