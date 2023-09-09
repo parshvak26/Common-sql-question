@@ -264,4 +264,6 @@ SELECT *, IF(x+y>z and y+z>x and z+x>y, "Yes", "No") as triangle FROM Triangle
 delete p1 from person p1, person p2 where p1.email = p2.email and p1.id > p2.id
 -----------------------------------------------------------------------------------------------------------------------------------
 
+select max(salary) as SecondHighestSalary from employee 
+where salary < (select max(salary) from employee)
 -------------------------------------------------------------------------------------------------------------------------------------------------
