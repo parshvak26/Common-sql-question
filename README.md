@@ -267,3 +267,11 @@ delete p1 from person p1, person p2 where p1.email = p2.email and p1.id > p2.id
 select max(salary) as SecondHighestSalary from employee 
 where salary < (select max(salary) from employee)
 -------------------------------------------------------------------------------------------------------------------------------------------------
+
+select sell_date, count(distinct product) as num_sold,
+group_concat(distinct product order by product asc separator ',') as products
+  from activities
+group by sell_date
+order by num_sold desc
+
+--------------------------------------------------------------------------------------------------------------------------
