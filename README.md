@@ -283,3 +283,13 @@ group by p.product_id
 having sum(o.unit) >= 100
 
 -----------------------------------------------------------------------------------------------------------------------
+select * from users
+where mail regexp'^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode[.]com';
+
+[a-zA-Z] = means mail should start from small or capital letter.
+[a-zA-Z0-9_.-] = after that any letter or number or _ or . or -
+@leetcode = after that combine with  @leetcode
+[.] = must come . after @leetcode
+com = then com.
+
+-----------------------------------------------------------------------------------------------------------------------------------
